@@ -14,7 +14,6 @@ class CreateAvatarsTable extends Migration
     public function up()
     {
         Schema::create('avatars', function (Blueprint $table) {
-            $table->id();
             $table->string('telefono',25);
             $table->text('avatar');
 
