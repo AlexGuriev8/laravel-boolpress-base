@@ -17,12 +17,11 @@ class CreateAvatarsTable extends Migration
             $table->id();
             $table->string('telefono',25);
             $table->text('avatar');
-            
-            //la relazione con la tabella user
+
+            //campo user_id
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-            ->references('id')
-            ->on('users');
+            //la relazione con la tabella user
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
